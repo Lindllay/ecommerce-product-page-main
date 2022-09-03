@@ -9,4 +9,160 @@
 html {
   font-size: 62.5%;
   font-family: "Kumbh Sans", sans-serif;
+}
+
+body {
+  height: 100vh;
+  margin: 0 5rem;
+}
+
+.wrapper {
+  max-width: 100rem;
+  margin: auto;
+}
+
+.main {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  -moz-column-gap: 10rem;
+       column-gap: 10rem;
+  padding: 5rem 5rem;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  padding: 2.5rem 0;
+  border-bottom: 2px solid hsl(223deg, 64%, 98%);
+}
+.header .logo {
+  height: 100%;
+  margin-right: 5rem;
+}
+.header .nav {
+  font-size: 1.4rem;
+}
+.header .nav__items {
+  display: flex;
+  gap: 3rem;
+  list-style: none;
+  color: hsl(219deg, 9%, 45%);
+  font-weight: 400;
+}
+.header .user-container {
+  display: flex;
+  gap: 3rem;
+  margin-left: auto;
+}
+.header .user-container .icon-cart {
+  align-self: center;
+}
+.header .user-container .img-avatar {
+  height: 4rem;
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: 1fr -webkit-min-content;
+  grid-template-rows: 1fr min-content;
+  -moz-column-gap: 2.5rem;
+       column-gap: 2.5rem;
+  row-gap: 2rem;
+}
+.gallery__item {
+  width: 100%;
+}
+.gallery__item--selected {
+  grid-column: 1/-1;
+}
+.gallery__img {
+  width: 100%;
+  border-radius: 1rem;
+}
+
+.product-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  justify-content: center;
+}
+.product-info .heading-1 {
+  font-size: 3.4rem;
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 2rem;
+}
+.product-info .heading-2 {
+  color: hsl(26deg, 100%, 55%);
+  font-size: 1rem;
+  letter-spacing: 1.6px;
+  text-transform: uppercase;
+}
+.product-info .description {
+  font-size: 1.4rem;
+  color: hsl(219deg, 9%, 45%);
+}
+.product-info .price-container {
+  display: grid;
+  grid-template-columns: -webkit-min-content -webkit-min-content;
+  grid-template-columns: min-content min-content;
+  grid-gap: 0.5rem 0.8rem;
+  align-items: center;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+.product-info .price-container .new-price {
+  font-size: 2.8rem;
+}
+.product-info .price-container .discount {
+  font-size: 1.6rem;
+  color: hsl(26deg, 100%, 55%);
+  background: hsl(25deg, 100%, 94%);
+  padding: 2px 8px;
+}
+.product-info .price-container .old-price {
+  font-size: 1.6rem;
+  color: hsl(220deg, 14%, 75%);
+  text-decoration: line-through;
+}
+.product-info .order-container {
+  display: flex;
+  gap: 1.5rem;
+}
+.product-info .order-container .btn {
+  border: none;
+  background-color: transparent;
+  display: inline-block;
+  border-radius: 1rem;
+}
+.product-info .order-container .quantity-field {
+  display: flex;
+  background-color: hsl(223deg, 64%, 98%);
+  border-radius: 1rem;
+  padding: 1rem;
+  gap: 4rem;
+  align-items: center;
+  font-weight: 700;
+  font-size: 1.4rem;
+}
+.product-info .order-container .quantity-field .quantity-btn {
+  color: hsl(26deg, 100%, 55%);
+  display: flex;
+  align-items: center;
+}
+.product-info .order-container .btn__add {
+  background-color: hsl(26deg, 100%, 55%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+  font-weight: 700;
+  color: hsl(0deg, 0%, 100%);
+  padding: 1.5rem;
+  width: 100%;
+}
+.product-info .order-container .btn__add img {
+  filter: brightness(300%);
+  height: 1.5rem;
 }/*# sourceMappingURL=main.css.map */

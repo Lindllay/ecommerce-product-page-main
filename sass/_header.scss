@@ -1,0 +1,32 @@
+.header {
+	display: flex;
+	align-items: center;
+	padding: 2.5rem 0;
+	border-bottom: 2px solid $color-light-grayish-blue;
+
+	.logo {
+		height: 100%;
+		margin-right: 5rem;
+	}
+	.nav {
+		font-size: 1.4rem;
+		&__items {
+			display: flex;
+			gap: 3rem;
+			list-style: none;
+			color: $color-dark-grayish-blue;
+			font-weight: 400;
+		}
+	}
+	.user-container {
+		display: flex;
+		gap: 3rem;
+		margin-left: auto;
+		.icon-cart {
+			align-self: center;
+		}
+		.img-avatar {
+			height: 4rem;
+		}
+	}
+}

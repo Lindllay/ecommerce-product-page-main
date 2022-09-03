@@ -1,0 +1,19 @@
+.gallery {
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	grid-template-rows: 1fr min-content;
+	column-gap: 2.5rem;
+	row-gap: 2rem;
+
+	&__item {
+		width: 100%;
+
+		&--selected {
+			grid-column: 1 / -1;
+		}
+	}
+	&__img {
+		width: 100%;
+		border-radius: 1rem;
+	}
+}

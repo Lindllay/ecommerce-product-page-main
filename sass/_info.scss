@@ -1,0 +1,90 @@
+.product-info {
+	display: flex;
+	flex-direction: column;
+	gap: 2rem;
+	justify-content: center;
+
+	.heading-1 {
+		font-size: 3.4rem;
+		font-weight: 700;
+		line-height: 1.2;
+		margin-bottom: 2rem;
+	}
+	.heading-2 {
+		color: $color-orange;
+		font-size: 1rem;
+		letter-spacing: 1.6px;
+		text-transform: uppercase;
+	}
+	.description {
+		font-size: 1.4rem;
+		color: $color-dark-grayish-blue;
+	}
+	.price-container {
+		display: grid;
+		grid-template-columns: min-content min-content;
+		grid-gap: 0.5rem 0.8rem;
+		align-items: center;
+		font-weight: 700;
+		margin-bottom: 1rem;
+
+		.new-price {
+			font-size: 2.8rem;
+		}
+		.discount {
+			font-size: 1.6rem;
+			color: $color-orange;
+			background: $color-pale;
+			padding: 2px 8px;
+		}
+		.old-price {
+			font-size: 1.6rem;
+			color: $color-grayish-blue;
+			text-decoration: line-through;
+		}
+	}
+	.order-container {
+		display: flex;
+		gap: 1.5rem;
+
+		.btn {
+			border: none;
+			background-color: transparent;
+			display: inline-block;
+			border-radius: 1rem;
+		}
+		.quantity-field {
+			display: flex;
+			background-color: $color-light-grayish-blue;
+			border-radius: 1rem;
+			padding: 1rem;
+			gap: 4rem;
+			align-items: center;
+			font-weight: 700;
+			font-size: 1.4rem;
+
+			.quantity-btn {
+				color: $color-orange;
+				display: flex;
+				align-items: center;
+			}
+		}
+		.btn__add {
+			background-color: $color-orange;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			gap: 1.5rem;
+			font-weight: 700;
+			color: $color-white;
+
+			padding: 1.5rem;
+			width: 100%;
+
+			img {
+				filter: brightness(300%);
+				height: 1.5rem;
+			}
+		}
+	}
+}
