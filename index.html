@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+		<link
+			rel="icon"
+			type="image/png"
+			sizes="32x32"
+			href="./images/favicon-32x32.png"
+		/>
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap"
+			rel="stylesheet"
+		/>
+		<link rel="stylesheet" href="css/main.css" />
+
+		<title>E-commerce product page</title>
+	</head>
+	<body>
+		<header class="header">
+			<img src="images/logo.svg" alt="logo" class="logo" />
+			<nav class="nav">
+				<ul class="nav__items">
+					<li class="nav__item">Collections</li>
+					<li class="nav__item">Men</li>
+					<li class="nav__item">Women</li>
+					<li class="nav__item">About</li>
+					<li class="nav__item">Contact</li>
+				</ul>
+			</nav>
+			<div class="user-container">
+				<img
+					src="images/icon-cart.svg"
+					alt="icon cart"
+					class="icon-cart"
+				/>
+				<img
+					src="images/image-avatar.png"
+					alt="image avatar"
+					class="img-avatar"
+				/>
+			</div>
+		</header>
+		<main class="main">
+			<div class="gallery">
+				<figure
+					class="gallery__item gallery__item--1 gallery__item--selected"
+				>
+					<img
+						src="images/image-product-1.jpg"
+						alt="sneakers photo"
+						class="gallery__img"
+					/>
+				</figure>
+				<figure class="gallery__item gallery__item--1">
+					<img
+						src="images/image-product-1-thumbnail.jpg"
+						alt="sneakers photo"
+						class="gallery__img"
+					/>
+				</figure>
+				<figure class="gallery__item gallery__item--2">
+					<img
+						src="images/image-product-2-thumbnail.jpg"
+						alt="sneakers photo"
+						class="gallery__img"
+					/>
+				</figure>
+				<figure class="gallery__item gallery__item--3">
+					<img
+						src="images/image-product-3-thumbnail.jpg"
+						alt="sneakers photo"
+						class="gallery__img"
+					/>
+				</figure>
+				<figure class="gallery__item gallery__item--4">
+					<img
+						src="images/image-product-4-thumbnail.jpg"
+						alt="sneakers photo"
+						class="gallery__img"
+					/>
+				</figure>
+			</div>
+			<div class="product-info">
+				<h2 class="heading-2">Sneaker company</h2>
+				<h1 class="heading-1">Fall Limited Edition Sneakers</h1>
+				<p class="description">
+					These low-profile sneakers are your perfect casual wear
+					companion. Featuring a durable rubber outer sole, they’ll
+					withstand everything the weather can offer.
+				</p>
+				<div class="price-container">
+					<p class="new-price">$125.00</p>
+					<p class="discount">50%</p>
+					<p class="old-price">$250.00</p>
+				</div>
+				<div class="order-container">
+					<div class="quantity-field">
+						<button class="btn quantity-btn--minus">-</button>
+						<div class="quantity-value">0</div>
+						<button class="btn quantity-btn--plus">-</button>
+					</div>
+					<button class="btn btn__add">
+						<img src="images/icon-cart.svg" alt="icon cart" />
+						Add to cart
+					</button>
+				</div>
+			</div>
+		</main>
+	</body>
+</html>
