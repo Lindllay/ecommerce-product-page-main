@@ -48,13 +48,15 @@ html {
 	}
 }
 
-// .overlay-gallery {
-// 	.gallery {
-// 		@media screen and (max-height: 400px) {
-// 			width: 50vh;
-// 		}
-// 	}
-// }
+.overlay-gallery {
+	.gallery {
+		.gallery__hero--img {
+		}
+		@media screen and (max-width: $bp-mobile) {
+			width: 50vh;
+		}
+	}
+}
 
 /////////// GALLERY /////////
 
