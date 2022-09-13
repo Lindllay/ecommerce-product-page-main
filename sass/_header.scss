@@ -71,7 +71,7 @@
 			right: -5rem;
 			box-shadow: 0 10px 20px 2px rgba(0, 0, 0, 0.116);
 			border-radius: 1rem;
-			padding-bottom: 2.5rem;
+			min-height: 20rem;
 			width: 30rem;
 			font-size: 1.2rem;
 
@@ -113,7 +113,7 @@
 				}
 			}
 			.btn--checkout {
-				width: 90%;
+				width: 100%;
 				margin: 0 auto;
 			}
 		}

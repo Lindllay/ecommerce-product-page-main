@@ -25,6 +25,7 @@ const gallery = document.querySelectorAll(".thumbnail-img");
 const infoGallery = document.querySelector(".gallery");
 const overlayGallery = document.querySelector(".overlay-gallery");
 
+const emptyCartMessage = `Your cart is empty`;
 let productCounterValue = 1;
 let productsInCart = 0;
 let price = 250;
@@ -88,6 +89,7 @@ const onRightArrowClick = function (event) {
 		.closest(".gallery")
 		.querySelector(".gallery__hero--img")
 		.setAttribute("src", `${src.replace(index, thumbnailIndex)}`);
+
 	updateThumbnail(event, thumbnailIndex);
 };
 
@@ -101,6 +103,7 @@ const onLeftArrowClick = function (event) {
 		.closest(".gallery")
 		.querySelector(".gallery__hero--img")
 		.setAttribute("src", `${src.replace(index, thumbnailIndex)}`);
+
 	updateThumbnail(event, thumbnailIndex);
 };
 
