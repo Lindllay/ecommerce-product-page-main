@@ -1,0 +1,30 @@
+.btn {
+	border: none;
+	background-color: transparent;
+	display: inline-block;
+	border-radius: 1rem;
+	cursor: pointer;
+}
+.btn__add {
+	background-color: $color-orange;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 1.5rem;
+	font-weight: 700;
+	color: $color-white;
+
+	padding: 1.5rem;
+	width: 100%;
+
+	transition: all 0.2s;
+
+	&:hover {
+		background-color: $color-light-orange;
+	}
+
+	img {
+		filter: brightness(300%);
+		height: 1.5rem;
+	}
+}

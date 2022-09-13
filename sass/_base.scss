@@ -1,6 +1,7 @@
 // Primary
 
 $color-orange: hsl(26, 100%, 55%);
+$color-light-orange: rgb(255, 184, 92);
 $color-pale: hsl(25, 100%, 94%);
 
 // Neutral
@@ -10,10 +11,6 @@ $color-grayish-blue: hsl(220, 14%, 75%);
 $color-light-grayish-blue: hsl(223, 64%, 98%);
 $color-white: hsl(0, 0%, 100%);
 $color-black: hsl(0, 0%, 0%);
-
-// - Weights: 400, 700
-
-// font-family: 'Kumbh Sans', sans-serif;
 
 *,
 *::before,
@@ -27,20 +24,47 @@ html {
 	font-size: 62.5%;
 	font-family: "Kumbh Sans", sans-serif;
 }
-
 body {
 	height: 100vh;
-	margin: 0 5rem;
 }
+
 .wrapper {
-	max-width: 100rem;
+	max-width: 130rem;
 	margin: auto;
+	padding: 0 15rem;
+
+	.main {
+		display: flex;
+		padding: 5rem 5rem;
+		gap: 10rem;
+	}
 }
 
-.main {
-	display: grid;
-	grid-template-columns: 1fr 1fr;
-	column-gap: 10rem;
+.overlay-gallery {
+	background-color: rgba(0, 0, 0, 0.685);
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 99;
+	width: 100%;
+	height: 100%;
 
-	padding: 5rem 5rem;
+	.gallery {
+		width: 400px;
+		margin: 10vh auto;
+		position: relative;
+		.btn--close {
+			position: absolute;
+			right: 0;
+			top: -3rem;
+			z-index: 100;
+			background: none;
+			border: none;
+			cursor: pointer;
+
+			img {
+				filter: brightness(200%);
+			}
+		}
+	}
 }

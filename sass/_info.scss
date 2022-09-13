@@ -3,6 +3,7 @@
 	flex-direction: column;
 	gap: 2rem;
 	justify-content: center;
+	flex: 1;
 
 	.heading-1 {
 		font-size: 3.4rem;
@@ -47,12 +48,6 @@
 		display: flex;
 		gap: 1.5rem;
 
-		.btn {
-			border: none;
-			background-color: transparent;
-			display: inline-block;
-			border-radius: 1rem;
-		}
 		.quantity-field {
 			display: flex;
 			background-color: $color-light-grayish-blue;
@@ -65,26 +60,15 @@
 
 			.quantity-btn {
 				color: $color-orange;
+				justify-content: center;
 				display: flex;
 				align-items: center;
+				height: 2.5rem;
+				width: 2.5rem;
 			}
 		}
-		.btn__add {
-			background-color: $color-orange;
-			display: flex;
-			justify-content: center;
-			align-items: center;
-			gap: 1.5rem;
-			font-weight: 700;
-			color: $color-white;
-
-			padding: 1.5rem;
-			width: 100%;
-
-			img {
-				filter: brightness(300%);
-				height: 1.5rem;
-			}
+		.quantity-value {
+			width: 1rem;
 		}
 	}
 }

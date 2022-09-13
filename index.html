@@ -17,20 +17,45 @@
 			rel="stylesheet"
 		/>
 		<link rel="stylesheet" href="css/main.css" />
+		<script src="scripts/script.js" defer></script>
 
 		<title>E-commerce product page</title>
 	</head>
 	<body>
 		<div class="wrapper">
+			<div class="overlay-menu"></div>
+
 			<header class="header">
+				<img
+					src="images/icon-menu.svg"
+					alt="menu icon"
+					class="menu-icon"
+					name="menu-outline"
+				/>
 				<img src="images/logo.svg" alt="logo" class="logo" />
 				<nav class="nav">
+					<img
+						src="images/icon-close.svg"
+						alt="close icon"
+						class="menu-icon"
+						name="close-outline"
+					/>
 					<ul class="nav__items">
-						<li class="nav__item">Collections</li>
-						<li class="nav__item">Men</li>
-						<li class="nav__item">Women</li>
-						<li class="nav__item">About</li>
-						<li class="nav__item">Contact</li>
+						<li class="nav__item">
+							<a href="#" class="nav__link">Collections</a>
+						</li>
+						<li class="nav__item">
+							<a href="#" class="nav__link">Men</a>
+						</li>
+						<li class="nav__item">
+							<a href="#" class="nav__link">Women</a>
+						</li>
+						<li class="nav__item">
+							<a href="#" class="nav__link">About</a>
+						</li>
+						<li class="nav__item">
+							<a href="#" class="nav__link">Contact</a>
+						</li>
 					</ul>
 				</nav>
 				<div class="user-container">
@@ -44,47 +69,88 @@
 						alt="image avatar"
 						class="img-avatar"
 					/>
+					<div class="cart display-none">
+						<p class="cart__header">Cart</p>
+						<div class="cart__container">
+							<!-- <img
+								src="images/image-product-1.jpg"
+								alt="cart img"
+							/>
+							<div class="cart__text">
+								<p class="product-name">
+									Fall Limited Edition Sneakers
+								</p>
+								<p>
+									<span class="product-price">$125.00</span> x
+									<span class="product-amount">3 </span
+									><span class="price-summary">$375.00</span>
+									<img
+										src="images/icon-delete.svg"
+										alt="icon-del"
+										class="icon-delete"
+									/>
+								</p>
+							</div> -->
+						</div>
+						<button class="btn btn__add btn--checkout">
+							Checkout
+						</button>
+					</div>
 				</div>
 			</header>
 			<main class="main">
 				<div class="gallery">
-					<figure
-						class="gallery__item gallery__item--1 gallery__item--selected"
-					>
+					<figure class="gallery__hero--item">
 						<img
 							src="images/image-product-1.jpg"
 							alt="sneakers photo"
-							class="gallery__img"
+							class="gallery__hero--img"
+							data-img="1"
 						/>
+						<button class="gallery__btn gallery__btn--left">
+							<img
+								src="images/icon-previous.svg"
+								alt="btn-previous"
+							/>
+						</button>
+						<button class="gallery__btn gallery__btn--right">
+							<img src="images/icon-next.svg" alt="btn-next" />
+						</button>
 					</figure>
-					<figure class="gallery__item gallery__item--1">
-						<img
-							src="images/image-product-1-thumbnail.jpg"
-							alt="sneakers photo"
-							class="gallery__img"
-						/>
-					</figure>
-					<figure class="gallery__item gallery__item--2">
-						<img
-							src="images/image-product-2-thumbnail.jpg"
-							alt="sneakers photo"
-							class="gallery__img"
-						/>
-					</figure>
-					<figure class="gallery__item gallery__item--3">
-						<img
-							src="images/image-product-3-thumbnail.jpg"
-							alt="sneakers photo"
-							class="gallery__img"
-						/>
-					</figure>
-					<figure class="gallery__item gallery__item--4">
-						<img
-							src="images/image-product-4-thumbnail.jpg"
-							alt="sneakers photo"
-							class="gallery__img"
-						/>
-					</figure>
+					<div class="thumbnails">
+						<figure class="thumbnail-item">
+							<img
+								src="images/image-product-1-thumbnail.jpg"
+								alt="sneakers photo"
+								class="thumbnail-img gallery__overlay"
+								data-img="1"
+							/>
+						</figure>
+						<figure class="thumbnail-item">
+							<img
+								src="images/image-product-2-thumbnail.jpg"
+								alt="sneakers photo"
+								class="thumbnail-img"
+								data-img="2"
+							/>
+						</figure>
+						<figure class="thumbnail-item">
+							<img
+								src="images/image-product-3-thumbnail.jpg"
+								alt="sneakers photo"
+								class="thumbnail-img"
+								data-img="3"
+							/>
+						</figure>
+						<figure class="thumbnail-item">
+							<img
+								src="images/image-product-4-thumbnail.jpg"
+								alt="sneakers photo"
+								class="thumbnail-img"
+								data-img="4"
+							/>
+						</figure>
+					</div>
 				</div>
 				<div class="product-info">
 					<h2 class="heading-2">Sneaker company</h2>
@@ -106,7 +172,7 @@
 							>
 								<img src="images/icon-minus.svg" alt="minus" />
 							</button>
-							<div class="quantity-value">0</div>
+							<div class="quantity-value">1</div>
 							<button class="btn quantity-btn quantity-btn--plus">
 								<img src="images/icon-plus.svg" alt="plus" />
 							</button>
@@ -118,6 +184,63 @@
 					</div>
 				</div>
 			</main>
+			<div class="overlay-gallery display-none">
+				<!-- <div class="gallery">
+					<button class="btn--close">
+						<img src="images/icon-close.svg" alt="icon-close" />
+					</button>
+					<figure class="gallery__hero--item">
+						<img
+							src="images/image-product-1.jpg"
+							alt="sneakers photo"
+							class="gallery__hero--img"
+						/>
+						<button class="gallery__btn gallery__btn--left">
+							<img
+								src="images/icon-previous.svg"
+								alt="btn-previous"
+							/>
+						</button>
+						<button class="gallery__btn gallery__btn--right">
+							<img src="images/icon-next.svg" alt="btn-next" />
+						</button>
+					</figure>
+					<div class="thumbnails">
+						<figure class="thumbnail-item">
+							<img
+								src="images/image-product-1-thumbnail.jpg"
+								alt="sneakers photo"
+								class="thumbnail-img"
+								data-img="1"
+							/>
+						</figure>
+						<figure class="thumbnail-item">
+							<img
+								src="images/image-product-2-thumbnail.jpg"
+								alt="sneakers photo"
+								class="thumbnail-img"
+								data-img="2"
+							/>
+						</figure>
+						<figure class="thumbnail-item">
+							<img
+								src="images/image-product-3-thumbnail.jpg"
+								alt="sneakers photo"
+								class="thumbnail-img"
+								data-img="3"
+							/>
+						</figure>
+						<figure class="thumbnail-item">
+							<img
+								src="images/image-product-4-thumbnail.jpg"
+								alt="sneakers photo"
+								class="thumbnail-img"
+								data-img="4"
+							/>
+						</figure>
+					</div>
+				</div> -->
+			</div>
 		</div>
 	</body>
 </html>

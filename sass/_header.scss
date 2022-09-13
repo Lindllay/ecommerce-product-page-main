@@ -1,32 +1,138 @@
 .header {
 	display: flex;
 	align-items: center;
-	padding: 2.5rem 0;
 	border-bottom: 2px solid $color-light-grayish-blue;
+	position: relative;
+
+	.menu-icon {
+		margin-right: 2rem;
+		display: none;
+		cursor: pointer;
+		outline: none;
+		-webkit-tap-highlight-color: transparent;
+	}
 
 	.logo {
-		height: 100%;
 		margin-right: 5rem;
 	}
 	.nav {
 		font-size: 1.4rem;
+
 		&__items {
 			display: flex;
-			gap: 3rem;
 			list-style: none;
+			gap: 2rem;
+		}
+		&__item {
+			position: relative;
+			display: flex;
+		}
+
+		&__link:link,
+		&__link:visited {
+			display: flex;
+			align-items: center;
+			text-decoration: none;
 			color: $color-dark-grayish-blue;
 			font-weight: 400;
+			height: 8rem;
+			border-bottom: 3px solid transparent;
+		}
+		&__link:hover,
+		&__link:active {
+			color: $color-black;
+			border-bottom: 3px solid $color-orange;
 		}
 	}
+
 	.user-container {
 		display: flex;
 		gap: 3rem;
 		margin-left: auto;
 		.icon-cart {
 			align-self: center;
+			cursor: pointer;
 		}
 		.img-avatar {
+			box-sizing: content-box;
+			border: 2px solid transparent;
 			height: 4rem;
+			border-radius: 50%;
+			cursor: pointer;
+
+			&:hover {
+				border: 2px solid $color-orange;
+			}
+		}
+		.cart {
+			position: absolute;
+			background-color: white;
+			top: 7rem;
+			right: -5rem;
+			box-shadow: 0 10px 20px 2px rgba(0, 0, 0, 0.116);
+			border-radius: 1rem;
+			padding-bottom: 2.5rem;
+			width: 30rem;
+			font-size: 1.2rem;
+
+			z-index: 20;
+
+			&__header {
+				font-weight: 700;
+				border-bottom: 1px solid rgba(0, 0, 0, 0.103);
+				padding: 2rem 2rem;
+			}
+			&__container {
+				display: flex;
+				align-items: center;
+				gap: 1rem;
+				padding: 2rem;
+				color: $color-dark-grayish-blue;
+				img {
+					width: 4rem;
+					height: 4rem;
+				}
+			}
+			&__text {
+				.product-name {
+					margin-bottom: 5px;
+				}
+				.product-amount {
+				}
+				.price-summary {
+					color: black;
+					font-weight: 700;
+				}
+				.icon-delete {
+					position: absolute;
+					right: 2rem;
+					top: 45%;
+					height: 1.2rem;
+					width: 1.2rem;
+					cursor: pointer;
+				}
+			}
+			.btn--checkout {
+				width: 90%;
+				margin: 0 auto;
+			}
 		}
 	}
+}
+
+.nav-open .nav .menu-icon[name="close-outline"] {
+	position: fixed;
+	z-index: 20;
+	top: 2.5rem;
+	left: 2rem;
+}
+.nav-open .overlay-menu {
+	background-color: rgba(0, 0, 0, 0.678);
+	position: fixed;
+	width: 100%;
+	height: 100vh;
+
+	opacity: 0;
+	visibility: hidden;
+	animation: fade 0.3s;
 }
