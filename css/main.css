@@ -113,53 +113,6 @@ body {
 .header .user-container .img-avatar:hover {
   border: 2px solid hsl(26deg, 100%, 55%);
 }
-.header .user-container .cart {
-  position: absolute;
-  background-color: white;
-  top: 7rem;
-  right: -5rem;
-  box-shadow: 0 10px 20px 2px rgba(0, 0, 0, 0.116);
-  border-radius: 1rem;
-  min-height: 20rem;
-  width: 30rem;
-  font-size: 1.2rem;
-  z-index: 20;
-}
-.header .user-container .cart__header {
-  font-weight: 700;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.103);
-  padding: 2rem 2rem;
-}
-.header .user-container .cart__container {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  padding: 2rem;
-  color: hsl(219deg, 9%, 45%);
-}
-.header .user-container .cart__container img {
-  width: 4rem;
-  height: 4rem;
-}
-.header .user-container .cart__text .product-name {
-  margin-bottom: 5px;
-}
-.header .user-container .cart__text .price-summary {
-  color: black;
-  font-weight: 700;
-}
-.header .user-container .cart__text .icon-delete {
-  position: absolute;
-  right: 2rem;
-  top: 45%;
-  height: 1.2rem;
-  width: 1.2rem;
-  cursor: pointer;
-}
-.header .user-container .cart .btn--checkout {
-  width: 100%;
-  margin: 0 auto;
-}
 
 .nav-open .nav .menu-icon[name=close-outline] {
   position: fixed;
@@ -633,4 +586,69 @@ body {
 .btn__add img {
   filter: brightness(300%);
   height: 1.5rem;
+}
+
+.cart {
+  position: absolute;
+  background-color: white;
+  top: 7rem;
+  right: -5rem;
+  box-shadow: 0 10px 20px 2px rgba(0, 0, 0, 0.116);
+  border-radius: 1rem;
+  min-height: 20rem;
+  width: 30rem;
+  font-size: 1.2rem;
+  z-index: 20;
+}
+.cart__header {
+  font-weight: 700;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.103);
+  padding: 2rem 2rem;
+}
+.cart__container {
+  display: grid;
+  grid-template-columns: -webkit-max-content 1fr;
+  grid-template-columns: max-content 1fr;
+  grid-template-rows: 80px;
+  align-items: center;
+  gap: 1rem;
+  padding: 2rem;
+  color: hsl(219deg, 9%, 45%);
+}
+.cart__container img {
+  width: 5rem;
+  height: 5rem;
+}
+.cart__container .cart__empty {
+  display: inline-block;
+  align-self: center;
+  justify-self: center;
+  grid-column: 1/-1;
+  grid-row: 1/-1;
+  font-weight: 700;
+  font-size: 1.4rem;
+}
+.cart__text .product-name {
+  margin-bottom: 5px;
+  display: block;
+}
+.cart__text .price-summary {
+  color: black;
+  font-weight: 700;
+  font-size: 1.3rem;
+  margin-left: 4px;
+}
+.cart__text .icon-delete {
+  position: absolute;
+  right: 2rem;
+  top: 45%;
+  height: 1.2rem;
+  width: 1.2rem;
+  cursor: pointer;
+}
+.cart .btn--checkout {
+  width: 100%;
+  margin: 0 auto;
+  grid-column: 1/span 2;
+  grid-row: 2/2;
 }/*# sourceMappingURL=main.css.map */

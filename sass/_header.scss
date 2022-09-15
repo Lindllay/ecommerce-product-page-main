@@ -64,59 +64,6 @@
 				border: 2px solid $color-orange;
 			}
 		}
-		.cart {
-			position: absolute;
-			background-color: white;
-			top: 7rem;
-			right: -5rem;
-			box-shadow: 0 10px 20px 2px rgba(0, 0, 0, 0.116);
-			border-radius: 1rem;
-			min-height: 20rem;
-			width: 30rem;
-			font-size: 1.2rem;
-
-			z-index: 20;
-
-			&__header {
-				font-weight: 700;
-				border-bottom: 1px solid rgba(0, 0, 0, 0.103);
-				padding: 2rem 2rem;
-			}
-			&__container {
-				display: flex;
-				align-items: center;
-				gap: 1rem;
-				padding: 2rem;
-				color: $color-dark-grayish-blue;
-				img {
-					width: 4rem;
-					height: 4rem;
-				}
-			}
-			&__text {
-				.product-name {
-					margin-bottom: 5px;
-				}
-				.product-amount {
-				}
-				.price-summary {
-					color: black;
-					font-weight: 700;
-				}
-				.icon-delete {
-					position: absolute;
-					right: 2rem;
-					top: 45%;
-					height: 1.2rem;
-					width: 1.2rem;
-					cursor: pointer;
-				}
-			}
-			.btn--checkout {
-				width: 100%;
-				margin: 0 auto;
-			}
-		}
 	}
 }
 

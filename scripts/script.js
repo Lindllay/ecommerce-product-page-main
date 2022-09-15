@@ -4,8 +4,10 @@ const wrapper = document.querySelector(".wrapper");
 const overlayMenu = document.querySelector(".overlay-menu");
 
 const cart = document.querySelector(".cart");
+const cartContainer = document.querySelector(".cart__container");
 const btnCart = document.querySelector(".icon-cart");
 const btnDeleteProduct = document.querySelector(".icon-delete");
+const emptyMessEl = document.querySelector(".cart__empty");
 
 const productPrice = document.querySelector(".product-price");
 const productAmount = document.querySelector(".product-amount");
@@ -19,13 +21,14 @@ const btnNext = document.querySelector(".gallery__btn--right");
 const btnMinus = document.querySelector(".quantity-btn--minus");
 const btnPlus = document.querySelector(".quantity-btn--plus");
 const productCounter = document.querySelector(".quantity-value");
-const btnAddToCard = document.querySelector(".btn__add");
+const btnAddToCard = document.querySelector(".btn_add__cart");
 
 const gallery = document.querySelectorAll(".thumbnail-img");
 const infoGallery = document.querySelector(".gallery");
 const overlayGallery = document.querySelector(".overlay-gallery");
 
-const emptyCartMessage = `Your cart is empty`;
+const emptyCartMessage = "Your cart is empty";
+const productName = "Fall Limited Edition Sneakers";
 let productCounterValue = 1;
 let productsInCart = 0;
 let price = 250;
@@ -158,6 +161,83 @@ const onHeroImgClick = function () {
 	}
 };
 
+const addToCart = function () {
+	productsInCart += productCounterValue;
+	resetCounter();
+	renderProduct();
+};
+
+const resetCounter = function () {
+	productCounterValue = 1;
+	productCounter.innerHTML = 1;
+};
+
+const renderProduct = function () {
+	const markup = `<img
+    src="images/image-product-1.jpg"
+    alt="cart img"
+/>
+<div class="cart__text">
+    <p class="product-name">
+        ${productName}
+    </p>
+    <p>
+        <span class="product-price">$${(price * discount).toFixed(2)}</span> x
+        <span class="product-amount">${productsInCart}</span
+        ><span class="price-summary">$${(
+			price *
+			discount *
+			productsInCart
+		).toFixed(2)}</span>
+        <img
+            src="images/icon-delete.svg"
+            alt="icon-del"
+            class="icon-delete"
+        />
+    </p>
+</div>
+<button class="btn btn__add btn--checkout">
+    Checkout
+</button>`;
+	if (cartContainer.childElementCount == 1 && productsInCart !== 0) {
+		emptyMessEl.style.display = "none";
+		cartContainer.insertAdjacentHTML("afterbegin", markup);
+	}
+
+	const newDOM = document.createRange().createContextualFragment(markup);
+
+	const newElements = Array.from(newDOM.querySelectorAll("*"));
+	const curElements = Array.from(cartContainer.querySelectorAll("*"));
+
+	if (productsInCart !== 0) {
+		newElements.forEach((newEl, i) => {
+			const curEl = curElements[i];
+			if (
+				!curEl.isEqualNode(newEl) &&
+				newEl.firstChild.nodeValue.trim() !== ""
+			) {
+				curEl.textContent = newEl.textContent;
+			}
+		});
+	}
+};
+
+const deleteProduct = function () {
+	if (productsInCart > 1) {
+		productsInCart--;
+		console.log(productsInCart);
+	} else {
+		productsInCart = 0;
+		console.log(productsInCart);
+
+		emptyMessEl.style.display = "block";
+		Array.from(cartContainer.querySelectorAll("*")).forEach((node) => {
+			if (!node.classList.contains("cart__empty")) node.remove();
+		});
+	}
+	renderProduct();
+};
+
 menuBtns.forEach((btn) => btn.addEventListener("click", onMenuBtnsClick));
 btnCart.addEventListener("click", onCartBtnClick);
 
@@ -172,6 +252,11 @@ heroImg.addEventListener("click", onHeroImgClick);
 
 btnNext.addEventListener("click", onRightArrowClick);
 btnPrevious.addEventListener("click", onLeftArrowClick);
+
+btnAddToCard.addEventListener("click", addToCart);
+document.addEventListener("click", function (e) {
+	if (e.target.classList.contains("icon-delete")) deleteProduct();
+});
 
 // const menu = document.querySelector('.menu');
 // const btnHamburger = document.querySelector('.hamburger');
