@@ -98,6 +98,21 @@ body {
   display: flex;
   gap: 3rem;
   margin-left: auto;
+  position: relative;
+}
+.header .user-container .amount-circle {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 1.8rem;
+  width: 2.4rem;
+  top: -3px;
+  left: 1rem;
+  background-color: hsl(26deg, 100%, 55%);
+  border-radius: 1rem;
+  color: white;
+  font-weight: 700;
 }
 .header .user-container .icon-cart {
   align-self: center;
@@ -275,7 +290,7 @@ body {
 }
 
 .display-none {
-  display: none;
+  display: none !important;
 }
 
 @media only screen and (min-width: 90em) {

@@ -49,6 +49,23 @@
 		display: flex;
 		gap: 3rem;
 		margin-left: auto;
+		position: relative;
+
+		.amount-circle {
+			position: absolute;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			height: 1.8rem;
+			width: 2.4rem;
+			top: -3px;
+			left: 1rem;
+			background-color: $color-orange;
+			border-radius: 1rem;
+			color: white;
+			font-weight: 700;
+		}
+
 		.icon-cart {
 			align-self: center;
 			cursor: pointer;

@@ -8,6 +8,7 @@ const cartContainer = document.querySelector(".cart__container");
 const btnCart = document.querySelector(".icon-cart");
 const btnDeleteProduct = document.querySelector(".icon-delete");
 const emptyMessEl = document.querySelector(".cart__empty");
+const basketCounter = document.querySelector(".amount-circle");
 
 const productPrice = document.querySelector(".product-price");
 const productAmount = document.querySelector(".product-amount");
@@ -164,6 +165,7 @@ const onHeroImgClick = function () {
 const addToCart = function () {
 	productsInCart += productCounterValue;
 	resetCounter();
+	renderBasketCounter();
 	renderProduct();
 };
 
@@ -222,10 +224,18 @@ const renderProduct = function () {
 	}
 };
 
+const renderBasketCounter = function () {
+	if (productsInCart > 0) {
+		basketCounter.textContent = productsInCart;
+		basketCounter.classList.remove("display-none");
+	} else {
+		basketCounter.classList.add("display-none");
+	}
+};
+
 const deleteProduct = function () {
 	if (productsInCart > 1) {
 		productsInCart--;
-		console.log(productsInCart);
 	} else {
 		productsInCart = 0;
 		console.log(productsInCart);
@@ -236,6 +246,7 @@ const deleteProduct = function () {
 		});
 	}
 	renderProduct();
+	renderBasketCounter();
 };
 
 menuBtns.forEach((btn) => btn.addEventListener("click", onMenuBtnsClick));
