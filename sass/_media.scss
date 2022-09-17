@@ -162,9 +162,11 @@ html {
 		@media only screen and (max-width: $bp-mobile) {
 			position: initial;
 			.amount-circle {
-				top: 7px;
 				left: unset;
-				right: 85px;
+				top: 8px;
+				margin-left: 5px;
+				height: 1.6rem;
+				width: 2rem;
 			}
 		}
 
