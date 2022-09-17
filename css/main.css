@@ -354,6 +354,8 @@ body {
     height: 70vw;
     -o-object-fit: cover;
        object-fit: cover;
+    -o-object-position: 20% 20%;
+       object-position: 20% 20%;
   }
 }
 
