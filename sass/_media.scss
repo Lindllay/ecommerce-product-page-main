@@ -159,7 +159,15 @@ html {
 .header {
 	position: relative;
 	.user-container {
-		position: initial;
+		@media only screen and (max-width: $bp-mobile) {
+			position: initial;
+			.amount-circle {
+				top: 7px;
+				left: unset;
+				right: 85px;
+			}
+		}
+
 		.cart {
 			@media only screen and (max-width: $bp-medium) {
 				top: 110%;

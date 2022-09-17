@@ -450,8 +450,15 @@ body {
 .header {
   position: relative;
 }
-.header .user-container {
-  position: initial;
+@media only screen and (max-width: 35.5em) {
+  .header .user-container {
+    position: initial;
+  }
+  .header .user-container .amount-circle {
+    top: 7px;
+    left: unset;
+    right: 85px;
+  }
 }
 @media only screen and (max-width: 70em) {
   .header .user-container .cart {
