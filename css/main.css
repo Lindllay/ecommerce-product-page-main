@@ -351,6 +351,9 @@ body {
 @media only screen and (max-width: 35.5em) {
   .gallery__hero--img {
     border-radius: 0;
+    height: 70vw;
+    -o-object-fit: cover;
+       object-fit: cover;
   }
 }
 
@@ -444,6 +447,12 @@ body {
   }
 }
 
+.header {
+  position: relative;
+}
+.header .user-container {
+  position: initial;
+}
 @media only screen and (max-width: 70em) {
   .header .user-container .cart {
     top: 110%;
@@ -460,8 +469,9 @@ body {
   .header .user-container .cart {
     width: 95%;
     top: 8rem;
+    left: 0;
     right: 0;
-    transform: translateX(-2.5%);
+    margin: 0 auto;
   }
   .header .user-container .cart .btn--checkout {
     max-width: 325px;
